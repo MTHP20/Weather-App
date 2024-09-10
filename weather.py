@@ -24,14 +24,14 @@ def get_current_weather(lat, lon, API_key):
     data = WeatherData(
         main = resp.get('weather')[0].get('main'),
         description = resp.get('weather')[0].get('description'),
-        icon = resp.get('weather')[0].get('icon'),
-        temperature = resp.get('main')[0].get('temp')
+        icon= resp.get('weather')[0].get('icon'),
+        temperature = resp.get('main').get('temp')
     )
     
     return data
 
 if __name__ == '__main__':
     lat, lon = get_lan_lon('Toronto', 'ON', 'Canada', api_key)
-    get_current_weather(lat,lon, api_key)
+    print(get_current_weather(lat,lon, api_key))
     
     
